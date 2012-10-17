@@ -1,0 +1,8 @@
+<% @posts.each do |post| %>
+
+    <h2><%= link_to post.title, post %></h2>
+    <p><%= friendly_date(post.created_at) %></p>
+    <p><%= post.body %></p>
+    <p><%= link_to 'Edit', edit_post_path(post) %></p>
+    <p><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<% end %>
